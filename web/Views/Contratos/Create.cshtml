@@ -132,7 +132,7 @@
                 <input type="submit" value="Guardar" class="btn btn-success" />
                 <a asp-action="Index">Cancelar</a>
             </div>
-
+            <button id="CreacionArray" type="button">---</button>
         </form>
     </div>
 </div>
@@ -150,7 +150,7 @@
                     $("<td>").text($("#IndicadorSeleccionado").val()),
                     $("<td>").text($("#txtValor").val()),
                     $("<td class='claseTd'>").append(
-                        $("<button class='btn btn-danger btn-sm text-center' onclick='EliminarFila()'></button>").append(
+                        $("<button class='btn btn-danger btn-sm text-center' onclick='EliminarFila()' type='button'></button>").append(
                             $("<i class='bi bi-trash'' > </i>"))),
                 )
             )
@@ -158,6 +158,14 @@
             $("#txtValor").val("");
             
         })
+
+        function EliminarFila() {
+            var boton = event.target.parentNode
+            var td = boton.parentNode;
+            var tr = td.parentNode;
+            var table = tr.parentNode;
+            table.removeChild(tr);
+        }
 
         //Funcion que crea un array de indicadores a partir de los datos cargados en la tabla
         $("#CreacionArray").on("click", function () {

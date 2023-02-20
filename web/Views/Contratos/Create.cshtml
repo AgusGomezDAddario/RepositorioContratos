@@ -102,7 +102,7 @@
                         </div>
                         <div class="col-sm-3">
                             @*<button class="btn btn-success btn-sm" onclick="agregarElementos() id="btnAgregar">Agregar</button>*@
-                            <button type="button" class="btn btn-success btn-sm" id="btnAgregar" onclick="guardar()">Agregar</button>
+                            <button type="button" class="btn btn-success btn-sm" id="btnAgregar">Agregar</button>
                             @*<button class="btn btn-primary btn-sm" id="btnTerminar">Terminar</button>*@
                         </div>
                     </div>
@@ -114,6 +114,7 @@
                                     <tr class="table-dark">
                                         <th>Nombre</th>
                                         <th>Cantidad</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -128,7 +129,7 @@
 
 
             <div class="form-group inline-group mt-3 mb-4">
-                <input type="submit" value="Guardar" id="btnTerminar" class="btn btn-success" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
                 <a asp-action="Index">Cancelar</a>
             </div>
 
@@ -138,6 +139,7 @@
     @section Scripts {
         @{
         <script src="js/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
             await Html.RenderPartialAsync("_ValidationScriptsPartial");
         }
         <script>
@@ -147,12 +149,18 @@
                 $("<tr>").append(
                     $("<td>").text($("#IndicadorSeleccionado").val()),
                     $("<td>").text($("#txtValor").val()),
+                    $("<td class='claseTd'>").append(
+                        $("<button class='btn btn-danger btn-sm text-center' onclick='EliminarFila()'></button>").append(
+                            $("<i class='bi bi-trash'' > </i>"))),
                 )
             )
+            $("#txtNombre").val("");
             $("#txtValor").val("");
+            
         })
 
-        $("#btnTerminar").on("click", function () {
+        //Funcion que crea un array de indicadores a partir de los datos cargados en la tabla
+        $("#CreacionArray").on("click", function () {
             
             var oIndicadores = []
             
@@ -170,6 +178,8 @@
             var oContratoCrearViewModel = {
                 oIndicadores: oIndicadores
             }
+
+            console.log(oIndicadores);
         })
 
         </script>

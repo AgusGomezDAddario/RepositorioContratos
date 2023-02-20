@@ -16,3 +16,9 @@ html {
 body {
     margin-bottom: 60px;
 }
+
+.claseTd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

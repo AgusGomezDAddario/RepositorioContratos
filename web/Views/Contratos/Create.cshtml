@@ -20,7 +20,7 @@
                     <input asp-for="Contrato.Numero" class="form-control" />
                     <span asp-validation-for="Contrato.Numero" class="text-danger"></span>
                 </div>
-                <div class="form-group form-check position-absolute start-50 translate-middle-x">
+                <div class="form-group form-check mx-auto">
                     <label class="form-check-label">
                         <input class="form-check-input" asp-for="Contrato.Cumplido" /> @Html.DisplayNameFor(model => model.Contrato.Cumplido)
                     </label>
@@ -32,7 +32,7 @@
                     <input asp-for="Contrato.FechaEmision" class="form-control" />
                     <span asp-validation-for="Contrato.FechaEmision" class="text-danger"></span>
                 </div>
-                <div class="form-group position-absolute start-50 translate-middle-x">
+                <div class="form-group mx-auto">
                     <label asp-for="Contrato.FechaLimite" class="control-label">Fecha Limite</label>
                     <input asp-for="Contrato.FechaLimite" class="form-control" />
                     <span asp-validation-for="Contrato.FechaLimite" class="text-danger"></span>
@@ -49,7 +49,7 @@
                     <input asp-for="Contrato.CantidadCamiones" class="form-control" />
                     <span asp-validation-for="Contrato.CantidadCamiones" class="text-danger"></span>
                 </div>
-                <div class="form-group position-absolute start-50 translate-middle-x">
+                <div class="form-group mx-auto">
                     <label asp-for="Contrato.CantidadEnToneladas" class="control-label">Cantidad en Toneladas</label>
                     <input asp-for="Contrato.CantidadEnToneladas" class="form-control" />
                     <span asp-validation-for="Contrato.CantidadEnToneladas" class="text-danger"></span>
@@ -61,7 +61,7 @@
                     <input asp-for="Contrato.PrecioTonelada" class="form-control" />
                     <span asp-validation-for="Contrato.PrecioTonelada" class="text-danger"></span>
                 </div>
-                <div class="form-group position-absolute start-50 translate-middle-x">
+                <div class="form-group mx-auto">
                     <label asp-for="Contrato.MetodoDePago" class="control-label">Metodo de pago</label>
                     <input asp-for="Contrato.MetodoDePago" class="form-control" />
                     <span asp-validation-for="Contrato.MetodoDePago" class="text-danger"></span>
@@ -69,7 +69,7 @@
             </div>
             <div class="form-group d-block">
                 <label asp-for="Contrato.GranoId" class="control-label">Grano</label>
-                <select asp-for="Contrato.GranoId" class="form-select" style="width:658px" asp-items="ViewBag.GranoId"></select>
+                <select asp-for="Contrato.GranoId" class="form-select" asp-items="ViewBag.GranoId"></select>
             </div>
             <div class="d-inline-flex mt-3 mb-4 form-group">
                 <div class="form-group">
@@ -77,14 +77,14 @@
                     <select asp-for="Contrato.ProveedorId" class="form-select" style="width:208px" asp-items="ViewBag.ProveedorId"></select>
 
                 </div>
-                <div class="form-group position-absolute start-50 translate-middle-x">
+                <div class="form-group mx-auto">
                     <label asp-for="Contrato.EmpleadoId" class="control-label">Empleado</label>
                     <select asp-for="Contrato.EmpleadoId" class="form-select" style="width:208px" asp-items="ViewBag.EmpleadoId"></select>
                 </div>
             </div>
 
             <div class="d-inline-flex mt-3 mb-4 form-group">
-            <div class="card" style="width:700px;">
+            <div class="card">
                 <div class="card-header">
                     Indicadores
                 </div>

@@ -132,10 +132,11 @@
                 <input type="submit" value="Guardar" class="btn btn-success" />
                 <a asp-action="Index">Cancelar</a>
             </div>
-            <button id="CreacionArray" type="button">---</button>
+            <button id="CreacionArray" type="button">Crear Array de Indicadores</button>
         </form>
     </div>
 </div>
+
     @section Scripts {
         @{
         <script src="js/jquery-3.5.1.min.js"></script>
@@ -180,15 +181,15 @@
                         Valor: $(tr).find('td:eq(1)').text(),
                     }
                 )
+                console.log(oIndicadores);
             })
 
-            //Creo una instancia de ContratoCrearViewModel
-            var oContratoCrearViewModel = {
-                oIndicadores: oIndicadores
-            }
-
-            console.log(oIndicadores);
-        })
+        //Creo una instancia de ContratoCrearViewModel
+        //for (var ind in oIndicadores)
+        //{
+        //    Model.Indicadores.Add(ind);
+        //}
+        //})
 
         </script>
-    }
+}

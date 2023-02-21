@@ -60,6 +60,13 @@ namespace web.Controllers
         {
             ContratoCrearViewModel vm = new ContratoCrearViewModel();
             vm.Indicadores = new List<Indicador>();
+            Indicador aux = new Indicador();
+            //aux.Valor = 10;
+            //aux.Nombre = "AAA";
+            //vm.Indicadores.Add(aux);
+            //aux.Valor = 11;
+            //aux.Nombre = "BBB";
+            //vm.Indicadores.Add(aux);
             // Agrego a la lista de nombres los indicadores desde la base de datos
             vm.IndicadoresNombres = new SelectList(_context.IndicadorCalidad, "Nombre", "Nombre");
             ViewData["EmpleadoId"] = new SelectList(_context.Empleado, "Id", "Apellido");
